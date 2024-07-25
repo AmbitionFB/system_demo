@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	char buf[100];
 	int fd, ret, flag;
-	struct pollfd fds[2]; // 定义用于监视读事件的文件描述符集合
+	struct pollfd fds[2]; // 定义用于监视读事件的文件描述符集�?
 
 	// 打开鼠标输入设备
 	fd = open("/dev/input/event2", O_RDONLY | O_NONBLOCK);
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	// 将标准输入设置为非阻塞模式
+	// 将标准输入设置为非阻塞模�?
 	flag = fcntl(STDIN_FILENO, F_GETFL);
 	if (flag == -1) 
 	{
@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 	}
 
 	//初始化结构体数组
-	fds[0].fd = STDIN_FILENO;  // 添加标准输入文件描述符到数组中
-	fds[0].events = POLLIN;	//监视读事件
-	fds[1].fd = fd;				// 添加鼠标输入文件描述符到数组中
-	fds[1].events = POLLIN;     // 监视读事件
+	fds[0].fd = STDIN_FILENO;  // 添加标准输入文件描述符到数组�?
+	fds[0].events = POLLIN;	//监视读事�?
+	fds[1].fd = fd;				// 添加鼠标输入文件描述符到数组�?
+	fds[1].events = POLLIN;     // 监视读事�?
 
 	while (1) 
 	{
